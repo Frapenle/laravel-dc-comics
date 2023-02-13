@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use App\Models\Comic;
 
 class ComicController extends Controller
 {
@@ -16,7 +17,7 @@ class ComicController extends Controller
     {
         // prende i dati dal db e li ritorna alla view
         $comics = Comic::all();
-        return view('comics.comic', compact('comic'));
+        return view('comics.index', compact('comics'));
     }
 
     /**

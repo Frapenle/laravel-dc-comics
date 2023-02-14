@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-12">
-                <h6>Table <a class="text-decoration-none" href="{{route('comics.index')}}">comics</a></h6>
+                <h6>Table <a class="text-decoration-none" href="{{route('admin.comics.index')}}">comics</a></h6>
             </div>
         </div>
     </div>

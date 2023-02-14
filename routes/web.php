@@ -18,5 +18,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
-Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+// Route::get('/admin/comics', [ComicController::class, 'index'])->name('comics.index');
+// Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('admin.comics', ComicController::class);
+});

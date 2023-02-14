@@ -17,7 +17,7 @@
                 <p> <span class="fw-bold">Type:</span> {{$comic->type}} </p>
                 <a href="" class="btn btn-warning btn-sm">Edit</a>
                 <a href="" class="btn btn-danger btn-sm">Delete</a>
-                <a href="{{route('comics.index')}}" class="btn btn-primary btn-sm">Back</a>
+                <a href="{{route('admin.comics.index')}}" class="btn btn-primary btn-sm">Back</a>
             </div>
         </div>
     </div>

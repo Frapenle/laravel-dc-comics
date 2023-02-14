@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ComicController;
+use App\Http\Controllers\Admin\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,5 +22,5 @@ Route::get('/', function () {
 // Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
 
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('admin.comics', ComicController::class);
+    Route::resource('comics', ComicController::class);
 });

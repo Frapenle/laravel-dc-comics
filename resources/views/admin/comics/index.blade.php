@@ -37,7 +37,7 @@
                                 {{-- <td> {{$comic->created_at}} </td> --}}
                                 {{-- <td> {{$comic->updated_at}} </td> --}}
                                 <td style="width: 300px;">
-                                    <a class="btn btn-success btn-sm" href="{{route('comics.show', $comic->id)}}">Show</a>
+                                    <a class="btn btn-success btn-sm" href="{{route('admin.comics.show', $comic->id)}}">Show</a>
                                     <a class="btn btn-warning btn-sm">Edit</a>
                                     <a class="btn btn-danger btn-sm">Delete</a>
                                 </td>

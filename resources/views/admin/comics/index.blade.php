@@ -6,14 +6,14 @@
 @section('main')
 <section id="">
     <div class="container-fluid">
-        <div class="row p-2">
+        <div class="row w-100 bg-white">
             <div class="col-12">
-                <div class="controllers ">
+                <div class="controllers">
                     <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
                 </div>
             </div>
         </div>
-        <div class="row w-100">
+        <div class="row w-100 mt-5">
             <div class="col-12">
                 <table class="table table-striped table-hover table-success">
                     <thead>
@@ -28,7 +28,7 @@
                         <th scope="col">Type</th>
                         {{-- <th scope="col">Creation date</th> --}}
                         {{-- <th scope="col">Update date</th> --}}
-                        <th scope="col">Action</th>
+                        <th scope="col" class="text-end">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,7 +44,7 @@
                                 <td> {{$comic->type}} </td>
                                 {{-- <td> {{$comic->created_at}} </td> --}}
                                 {{-- <td> {{$comic->updated_at}} </td> --}}
-                                <td style="width: 300px;">
+                                <td style="width: 300px;" class="text-end">
                                     <a class="btn btn-success btn-sm" href="{{route('admin.comics.show', $comic->id)}}">Show</a>
                                     <a class="btn btn-warning btn-sm">Edit</a>
                                     <a class="btn btn-danger btn-sm">Delete</a>

@@ -1,10 +1,18 @@
 
 @extends('layouts.app')
+@section('title', "Admin - Comics list")
+
 
 @section('main')
-<section id="cards">
-    <div class="">
-        
+<section id="">
+    <div class="container-fluid">
+        <div class="row p-2">
+            <div class="col-12">
+                <div class="controllers ">
+                    <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
+                </div>
+            </div>
+        </div>
         <div class="row w-100">
             <div class="col-12">
                 <table class="table table-striped table-hover table-success">

@@ -15,8 +15,9 @@
                 <p> <span class="fw-bold">Series:</span> {{$comic->series}} </p>
                 <p> <span class="fw-bold">Sale date:</span> {{$comic->sale_date}} </p>
                 <p> <span class="fw-bold">Type:</span> {{$comic->type}} </p>
-                <a href="" class="btn btn-warning bttn-xs">Edit</a>
-                <a href="" class="btn btn-danger bttn-xs">Delete</a>
+                <a href="" class="btn btn-warning btn-sm">Edit</a>
+                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                <a href="{{route('comics.index')}}" class="btn btn-primary btn-sm">Back</a>
             </div>
         </div>
     </div>

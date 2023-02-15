@@ -97,4 +97,10 @@ class ComicController extends Controller
         $comic->delete();
         return redirect()->route('admin.comics.index', $comic->id);
     }
+
+    public function trashed()
+    {
+        $comicTrashed = Comic::onlyTrashed()->get();
+        return view('admin.comics.softDeleted', compact('comicTrashed'));
+    }
 }

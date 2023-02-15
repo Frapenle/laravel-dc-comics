@@ -10,6 +10,7 @@
             <div class="col-12">
                 <div class="controllers">
                     <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
+                    <a href="{{route('admin.comics.trashed')}}" class="btn btn-outline-secondary fw-bold sticky-top">Comic eliminati</a>
                 </div>
             </div>
         </div>

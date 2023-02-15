@@ -4,7 +4,7 @@
 
 
 @section('main')
-<section id="">
+<section id="admin">
     <div class="container-fluid">
         <div class="row w-100 bg-white">
             <div class="col-12">

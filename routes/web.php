@@ -31,3 +31,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 //show soft deleted comics
 Route::get('trashed', [ComicController::class, 'trashed'])->name('admin.comics.trashed');
+Route::delete('force-delete/{id}', [ComicController::class, 'forceDelete'])->name('admin.comics.forceDelete');

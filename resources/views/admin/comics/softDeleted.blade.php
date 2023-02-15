@@ -46,7 +46,7 @@
                             {{-- <td> {{$comic->created_at}} </td> --}}
                             {{-- <td> {{$comic->updated_at}} </td> --}}
                             <td style="width: 300px;" class="text-end">
-                                <form action="{{route('admin.comics.destroy', $comic->id)}}" method="POST">
+                                <form action="{{route('admin.comics.forceDelete', $comic->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <a class="btn btn-success btn-sm" href="{{route('admin.comics.show', $comic->id)}}">Show</a>

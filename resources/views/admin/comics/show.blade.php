@@ -19,7 +19,7 @@
                 @csrf
                 @method('DELETE')
                     <a class="btn btn-warning btn-sm" href="{{route('admin.comics.edit', $comic->id)}}">Edit</a>
-                    <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}">Delete</button>
+                    <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}" onclick="return confirm('Attenzione, i dati verranno cancellati in modo permanente')">Delete</button>
                     <a href="{{route('admin.comics.index')}}" class="btn btn-primary btn-sm">Back</a>
             </form>
             </div>

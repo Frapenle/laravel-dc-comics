@@ -50,7 +50,7 @@
                                         @method('DELETE')
                                         <a class="btn btn-success btn-sm" href="{{route('admin.comics.show', $comic->id)}}">Show</a>
                                         <a class="btn btn-warning btn-sm" href="{{route('admin.comics.edit', $comic->id)}}">Edit</a>
-                                        <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}" onclick="return confirm('Attenzione, i dati verranno cancellati in modo permanente')">Delete</button>
                                     </form>
                                 </td>
                             </tr>

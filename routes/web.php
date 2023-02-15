@@ -28,3 +28,6 @@ Route::get('/guest', [PageController::class, 'home'])->name('guest.home');
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('comics', ComicController::class);
 });
+
+//show soft deleted comics
+Route::get('trashed', [ComicController::class, 'trashed'])->name('admin.comics.trashed');

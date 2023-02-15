@@ -49,9 +49,9 @@
                                 <form action="{{route('admin.comics.forceDelete', $comic->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <a class="btn btn-success btn-sm" href="{{route('admin.comics.show', $comic->id)}}">Show</a>
-                                    <a class="btn btn-warning btn-sm" href="{{route('admin.comics.edit', $comic->id)}}">Edit</a>
-                                    <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}" onclick="return confirm('Attenzione, i dati verranno cancellati in modo permanente')">Delete</button>
+                                    {{-- add restore record button --}}
+                                    <a class="btn btn-info btn" href="#">Restore</a>
+                                    <button type="submit" class="btn btn-danger btn" href="{{route('admin.comics.destroy', $comic->id)}}" onclick="return confirm('Attenzione, i dati verranno cancellati in modo permanente')">Delete</button>
                                 </form>
                             </td>
                         </tr>

@@ -38,7 +38,12 @@
                     <label for="type" class="form-label">Type</label>
                     <input name="type" type="text" class="form-control" id="type" value="{{ $comic->type}}">
                 </div>
-                <button type="submit" class="btn btn-warning mb-4">Edit</button>
+            </form>
+            <form action="{{route('admin.comics.destroy', $comic->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <a class="btn btn-warning btn-sm" href="{{route('admin.comics.edit', $comic->id)}}">Edit</a>
+                <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}">Delete</button>
             </form>
             
         </div>

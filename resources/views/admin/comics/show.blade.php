@@ -15,9 +15,13 @@
                 <p> <span class="fw-bold">Series:</span> {{$comic->series}} </p>
                 <p> <span class="fw-bold">Sale date:</span> {{$comic->sale_date}} </p>
                 <p> <span class="fw-bold">Type:</span> {{$comic->type}} </p>
-                <a href="" class="btn btn-warning btn-sm">Edit</a>
-                <a href="" class="btn btn-danger btn-sm">Delete</a>
-                <a href="{{route('admin.comics.index')}}" class="btn btn-primary btn-sm">Back</a>
+            <form action="{{route('admin.comics.destroy', $comic->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                    <a class="btn btn-warning btn-sm" href="{{route('admin.comics.edit', $comic->id)}}">Edit</a>
+                    <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}">Delete</button>
+                    <a href="{{route('admin.comics.index')}}" class="btn btn-primary btn-sm">Back</a>
+            </form>
             </div>
         </div>
     </div>

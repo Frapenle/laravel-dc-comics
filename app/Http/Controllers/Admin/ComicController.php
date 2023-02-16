@@ -86,8 +86,10 @@ class ComicController extends Controller
     }
     public function restoreDeleted($id)
     {
-        $rest = Comic::onlyTrashed()->find($id)->restore();
-        return redirect()->route('admin.comics.trashed');
+        $comic = Comic::onlyTrashed()->find($id);
+        $comic->restore();
+        $message = "{$comic->title} è stato ripristinato";
+        return redirect()->route('admin.comics.trashed')->with('message', $message);
     }
 
     /**

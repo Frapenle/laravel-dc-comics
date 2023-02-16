@@ -27,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('admin.comics.create');
+        return view('admin.comics.create', ['comic' => new Comic()]);
     }
 
     /**
@@ -101,21 +101,20 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
         //find or fail
-        $comic = Comic::findOrFail($id);
-        return view('admin.comics.edit', compact('comic'));
+        return view('admin.comics.edit', ['comic' => $comic]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comic $comic)

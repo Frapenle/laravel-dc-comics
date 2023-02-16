@@ -41,15 +41,42 @@ class ComicController extends Controller
         //validation => validate vuole un array associativo 'key' => 'value'
         // $key (il name di ogni attributo da controllare)
         // $value (i tipi di validation da verificare)
-        $request->validate([
-            'title' => 'required|min:2|max:100',
-            'description' => 'required|min:10|max:1000',
-            'thumb' => 'required|url|max:255',
-            'price' => 'required|decimal:2|numeric',
-            'series' => 'required|min:2|max:100',
-            'sale_date' => 'required|date|after:1940-01-01|before:today',
-            'type' => 'required|min:2|max:255'
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|min:2|max:100',
+                'description' => 'required|min:10|max:1000',
+                'thumb' => 'required|url|max:255',
+                'price' => 'required|decimal:2|numeric',
+                'series' => 'required|min:2|max:100',
+                'sale_date' => 'required|date|after:1900-01-01|before:today',
+                'type' => 'required|min:2|max:255'
+            ],
+            // nel secondo array associativo inserire i messaggi personalizzati
+            [
+                'title.required' => 'Il titolo è obbligatorio',
+                'title.min' => 'Il titolo deve avere almeno 2 caratteri',
+                'title.max' => 'Il titolo può avere massimo 100 caratteri',
+                'description.require' => 'La descrizione è obbligatoria',
+                'description.min' => 'La descrizione deve avere almeno 10 caratteri',
+                'description.max' => 'La descrizione può avere massimo 1000 caratteri',
+                'thumb.required' => "L'URL è obbligatorio",
+                'thumb.url' => "Inserire un URL valido",
+                'thumb.max' => "Massimo 250 caratteri",
+                'price.required' => "Il prezzo è obbligatorio",
+                'price.decimal' => "Inserire 2 decimali",
+                'price.numeric' => "Inserire solo numeri",
+                'series.required' => "Campo series obbligatorio",
+                'series.min' => "Series richiede almeno 2 caratteri",
+                'series.max' => "Series accetta massimo 100 caratteri",
+                'sale_date.required' => "La data di vendita è obbligatoria",
+                'sale_date.date' => "Inserire una data in formato valido",
+                'sale_date.after' => "Inserire data corretta, non può essere stato venduto prima del 1900",
+                'sale_date.before' => "Inserire data corretta",
+                'type.required' => 'Campo type obbligatorio',
+                'type.min' => 'Campo type deve avere almeno 2 caratteri',
+                'type.max' => 'Campo type non puo contenere più di 255 caratteri',
+            ]
+        );
 
         $comic = $request->all();
         $newComic = new Comic();

@@ -1,24 +1,32 @@
 @extends('layouts.app')
 @section('title', "Admin - Comics deleted list")
 
+{{-- ========== header ========= --}}
 @section('header')
-<div class="container-fluid">
-    <div class="row w-100 bg-white">
-                <div class="col-12">
-                    <div class="controllers">
-                        <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
-                        <a href="{{route('admin.comics.index')}}" class="btn btn-outline-primary fw-bold">Back</a>
-                        @if (session('message'))
-                        <div class="message alert alert-warning w-100 d-inline-block">
-                            <span>{{session('message')}}</span>
-                        </div>
-                        @endif
+    <div class="container-fluid">
+        <div class="row w-100 d-flex">
+            <div class="col-12">
+                <div class="controllers w-100 d-flex">
+                    <a href="{{route('admin.comics.create')}}" class="h-50 btn btn-outline-success fw-bold sticky-top">Crea comic</a>
+                    <a href="{{route('admin.comics.index')}}" class="h-50 btn btn-outline-primary fw-bold">Back</a>
+                    @if (session('message'))
+                    <div class="message alert alert-primary text-center flex-grow-1">
+                        <span>{{session('message')}}</span>
                     </div>
+                    @endif
+                    @if (session('deleteMessage'))
+                    <div class="message alert alert-danger text-center flex-grow-1">
+                        <span>{{session('deleteMessage')}}</span>
+                    </div>
+                    @endif
+
                 </div>
             </div>
-
-</div>
+        </div>
+    </div>
 @endsection
+
+{{-- ========== main ========= --}}
 @section('main')
 <section id="admin">
     <div class="container-fluid">

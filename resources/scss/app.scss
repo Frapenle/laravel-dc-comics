@@ -1,21 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
 
+header {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    height: 50px;
+    width: 100%;
+
+    .controllers {
+        padding: 5px 0 10px 0;
+
+        gap: .5rem;
+
+        .message {
+            padding: .4rem 3rem;
+        }
+    }
+}
+
 table thead th {
-    margin-top: 90px;
-    padding: 3px;
+    padding: 0 10px;
     position: sticky;
     top: 50px;
     z-index: 1;
     background-color: rgb(57, 162, 57) !important;
-}
-
-.controllers {
-    width: 100%;
-    position: fixed;
-    background-color: white;
-    padding: 5px 0 10px 0;
-
-    .message {
-        padding: .4rem 3rem;
-    }
 }

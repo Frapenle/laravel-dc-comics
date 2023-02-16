@@ -115,7 +115,10 @@ class ComicController extends Controller
 
     public function forceDelete($id)
     {
-        Comic::onlyTrashed()->find($id)->forceDelete();
-        return redirect()->route('admin.comics.trashed');
+        Comic::onlyTrashed()->find($id);
+        $comic = Comic::onlyTrashed()->find($id);
+        $comic->forceDelete();
+        $deleteMessage = "{$comic->title} è stato eliminato dal db";
+        return redirect()->route('admin.comics.trashed')->with('deleteMessage', $deleteMessage);
     }
 }

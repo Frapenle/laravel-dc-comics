@@ -8,6 +8,21 @@
         <div class="col-12">
             <form action="{{route('admin.comics.store')}}" method="POST">
             @csrf
+                {{-- ===== display errors ===== --}}
+                @if ($errors->any())
+                    
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>
+                            {{$error}}
+                        </li>
+                    @endforeach
+                    </ul>
+                </div>
+                @endif
+
+                {{-- ===== form ===== --}}
                 <div class="mb-4">
                     <label for="title" class="form-label">Title</label>
                     <input name="title" type="text" class="form-control" id="title" placeholder="Title">

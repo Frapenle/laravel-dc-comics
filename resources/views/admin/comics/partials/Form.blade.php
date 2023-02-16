@@ -42,11 +42,8 @@
         <label for="type" class="form-label">Type</label>
         <input name="type" type="text" class="form-control" id="type" value={{ old('title') ?? $comic->type }}>
     </div>
-    <button type="submit" class="btn 
-    @if ($method == 'DELETE') btn-danger
-    @elseif ($method == 'PUT') btn-warning
-    @else ($method == 'POST') btn-success @endif">
-    {{ $method == 'DELETE' ? 'Elimina' : 'Aggiorna' }}
+    <button type="submit" class="btn {{ $method == 'PUT' ? 'btn-warning' : 'btn-success' }}">
+    {{ $method == 'PUT' ? 'Modifica' : 'Aggiungi' }}
     </button>
 
 </form>

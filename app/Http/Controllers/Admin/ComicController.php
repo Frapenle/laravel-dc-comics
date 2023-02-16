@@ -84,6 +84,11 @@ class ComicController extends Controller
         $comic->update($data);
         return redirect()->route('admin.comics.index', $comic->id);
     }
+    public function restoreDeleted($id)
+    {
+        $rest = Comic::onlyTrashed()->find($id)->restore();
+        return redirect()->route('admin.comics.trashed');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -101,12 +106,14 @@ class ComicController extends Controller
     public function trashed()
     {
         $comicTrashed = Comic::onlyTrashed()->get();
+
         return view('admin.comics.softDeleted', compact('comicTrashed'));
     }
 
+
     public function forceDelete($id)
     {
-        $comic = Comic::onlyTrashed()->find($id)->forceDelete();
+        Comic::onlyTrashed()->find($id)->forceDelete();
         return redirect()->route('admin.comics.trashed');
     }
 }

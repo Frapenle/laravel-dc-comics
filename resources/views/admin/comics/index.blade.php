@@ -7,7 +7,7 @@
         <div class="row w-100 d-flex">
             <div class="col-12">
                 <div class="controllers w-100 d-flex">
-                    <a href="{{route('admin.comics.create')}}" class="h-50 btn btn-outline-success fw-bold sticky-top">Crea comic</a>
+                    <a href="{{route('admin.comics.create')}}" class="h-50 btn btn-outline-success fw-bold sticky-top">Nuovo comic</a>
                     <a href="{{route('admin.comics.trashed')}}" class="h-50 btn btn-outline-secondary fw-bold sticky-top">Comic eliminati</a>
                     @if (session('message'))
                     <div class="message alert alert-danger text-center flex-grow-1">

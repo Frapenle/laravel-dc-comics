@@ -2,9 +2,8 @@
 @extends('layouts.app')
 @section('title', "Admin - create new comic")
 
-
 @section('main')
-<div class="container mt-3">
+<div class="container mt-4">
     <div class="row">
         <div class="col-12">
             <form action="{{route('admin.comics.store')}}" method="POST">

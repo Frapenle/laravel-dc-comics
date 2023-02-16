@@ -1,6 +1,5 @@
-
 @extends('layouts.app')
-@section('title', "Admin - create new comic")
+@section('title', "Admin - edit $comic->title")
 @section('header')
 {{-- insert header --}}
 @endsection

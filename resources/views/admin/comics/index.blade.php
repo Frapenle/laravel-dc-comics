@@ -2,9 +2,8 @@
 @extends('layouts.app')
 @section('title', "Admin - Comics list")
 
-
-@section('main')
-<section id="admin">
+@section('header')
+<header>
     <div class="container-fluid">
         <div class="row w-100 bg-white">
             <div class="col-12">
@@ -12,8 +11,20 @@
                     <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
                     <a href="{{route('admin.comics.trashed')}}" class="btn btn-outline-secondary fw-bold sticky-top">Comic eliminati</a>
                 </div>
+                @if (session('message'))
+                <div class="message alert-primary">
+                    <p>{{session('message')}}</p>
+                </div>
+                @endif
             </div>
         </div>
+    </div>
+</header>
+@endsection
+@section('main')
+<section id="admin">
+    <div class="container-fluid">
+
         <div class="row w-100 mt-5">
             <div class="col-12">
                 <table class="table table-striped table-hover table-success">

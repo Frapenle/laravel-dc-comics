@@ -1,18 +1,28 @@
 @extends('layouts.app')
 @section('title', "Admin - Comics deleted list")
 
+@section('header')
+<div class="container-fluid">
+    <div class="row w-100 bg-white">
+                <div class="col-12">
+                    <div class="controllers">
+                        <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
+                        <a href="{{route('admin.comics.index')}}" class="btn btn-outline-primary fw-bold">Back</a>
+                        @if (session('message'))
+                        <div class="message alert alert-warning w-100 d-inline-block">
+                            <span>{{session('message')}}</span>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
 
+</div>
+@endsection
 @section('main')
 <section id="admin">
     <div class="container-fluid">
-        <div class="row w-100 bg-white">
-            <div class="col-12">
-                <div class="controllers">
-                    <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
-                    <a href="{{route('admin.comics.index')}}" class="btn btn-outline-primary fw-bold">Back</a>
-                </div>
-            </div>
-        </div>
+        
         <div class="row w-100 mt-5">
             <div class="col-12">
                 <table class="table table-striped table-hover table-success">

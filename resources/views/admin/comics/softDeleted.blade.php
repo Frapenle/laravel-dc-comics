@@ -9,7 +9,6 @@
             <div class="col-12">
                 <div class="controllers">
                     <a href="{{route('admin.comics.create')}}" class="btn btn-outline-success fw-bold sticky-top">Crea comic</a>
-                    <a href="{{route('admin.comics.trashed')}}" class="btn btn-outline-secondary fw-bold sticky-top">Comic eliminati</a>
                     <a href="{{route('admin.comics.index')}}" class="btn btn-outline-primary fw-bold">Back</a>
                 </div>
             </div>
@@ -50,7 +49,7 @@
                                     @csrf
                                     @method('DELETE')
                                     {{-- add restore record button --}}
-                                    <a class="btn btn-info btn" href="#">Restore</a>
+                                    <a class="btn btn-info btn" href="{{route('admin.comics.restore', $comic->id)}}" onclick="return confirm('Vuoi ripristinare il record?')">Restore</a>
                                     <button type="submit" class="btn btn-danger btn" href="{{route('admin.comics.destroy', $comic->id)}}" onclick="return confirm('Attenzione, i dati verranno cancellati in modo permanente')">Delete</button>
                                 </form>
                             </td>

@@ -141,7 +141,8 @@ class ComicController extends Controller
     {
         $comic = Comic::findOrFail($id);
         $comic->delete();
-        return redirect()->route('admin.comics.index', $comic->id);
+        $message = "{$comic->title} è stato eliminato";
+        return redirect()->route('admin.comics.index', $comic->id)->with('message', $message);
     }
 
     public function trashed()
@@ -157,7 +158,7 @@ class ComicController extends Controller
         Comic::onlyTrashed()->find($id);
         $comic = Comic::onlyTrashed()->find($id);
         $comic->forceDelete();
-        $deleteMessage = "{$comic->title} è stato eliminato dal db";
-        return redirect()->route('admin.comics.trashed')->with('deleteMessage', $deleteMessage);
+        $message = "{$comic->title} è stato eliminato dal db";
+        return redirect()->route('admin.comics.trashed')->with('deleteMessage', $message);
     }
 }

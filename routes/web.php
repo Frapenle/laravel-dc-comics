@@ -22,13 +22,10 @@ Route::get('/', function () {
 
 Route::get('/guest', [PageController::class, 'home'])->name('guest.home');
 
-// Route::get('/admin/comics', [ComicController::class, 'index'])->name('comics.index');
-// Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('comics', ComicController::class);
+    Route::get('trashed', [ComicController::class, 'trashed'])->name('comics.trashed');
+    Route::delete('comics/force-delete/{id}', [ComicController::class, 'forceDelete'])->name('comics.forceDelete');
+    Route::get('comics/restore/{id}', [ComicController::class, 'restoreDeleted'])->name('comics.restore');
 });
-
-//show soft deleted comics
-Route::get('trashed', [ComicController::class, 'trashed'])->name('admin.comics.trashed');
-Route::delete('force-delete/{id}', [ComicController::class, 'forceDelete'])->name('admin.comics.forceDelete');

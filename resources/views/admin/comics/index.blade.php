@@ -29,7 +29,7 @@
                         <th scope="col">Type</th>
                         {{-- <th scope="col">Creation date</th> --}}
                         {{-- <th scope="col">Update date</th> --}}
-                        <th scope="col" class="text-end">Action</th>
+                        <th scope="col" class="text-center" style="width: 250px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,13 +45,13 @@
                                 <td> {{$comic->type}} </td>
                                 {{-- <td> {{$comic->created_at}} </td> --}}
                                 {{-- <td> {{$comic->updated_at}} </td> --}}
-                                <td style="width: 300px;" class="text-end">
+                                <td style="width: 250px;" class="text-end">
                                     <form action="{{route('admin.comics.destroy', $comic->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a class="btn btn-success btn-sm" href="{{route('admin.comics.show', $comic->id)}}">Show</a>
-                                        <a class="btn btn-warning btn-sm" href="{{route('admin.comics.edit', $comic->id)}}">Edit</a>
-                                        <button type="submit" class="btn btn-danger btn-sm" href="{{route('admin.comics.destroy', $comic->id)}}" onclick="return confirm('Sei sicuro di voler eliminare questo record?')">Delete</button>
+                                        <a class="btn btn-success" href="{{route('admin.comics.show', $comic->id)}}">Show</a>
+                                        <a class="btn btn-warning" href="{{route('admin.comics.edit', $comic->id)}}">Edit</a>
+                                        <button type="submit" class="btn btn-danger" href="{{route('admin.comics.destroy', $comic->id)}}" onclick="return confirm('Attenzione, sei sicuro di voler eliminare questo record?')">Delete</button>
                                     </form>
                                 </td>
                             </tr>

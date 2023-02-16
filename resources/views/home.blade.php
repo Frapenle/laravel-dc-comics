@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-<section id="menu">
+<section id="menu" class="mt-5">
     <div class="container">
         <div class="row text-center mt-4">
             <div class="col-12">

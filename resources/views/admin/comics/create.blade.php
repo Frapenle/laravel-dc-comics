@@ -1,9 +1,11 @@
 
 @extends('layouts.app')
 @section('title', "Admin - create new comic")
-
+@section('header')
+{{-- insert header --}}
+@endsection
 @section('main')
-<div class="container mt-4">
+<div id="form-create" class="container mt-5">
     <div class="row">
         <div class="col-12">
             <form action="{{route('admin.comics.store')}}" method="POST">
@@ -44,7 +46,7 @@
                     <input name="series" type="text" class="form-control" id="series" placeholder="Serie">
                 </div>
                 <div class="mb-4">
-                    <label for="sale_date" class="form-label">Sale date</label>
+                    <label for="sale_date" class="form-label">Sale date <span class="date">AAAA-MM-GG</span></label>
                     <input name="sale_date" type="text" class="form-control" id="sale_date" placeholder="Sale date">
                 </div>
                 <div class="mb-4">
